@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>S. S. M. Nityanand BalMandir</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fffde7;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(to right, #fff9c4, #fffde7);
+      color: #000;
+      padding: 1.5rem 1rem 0.5rem;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+
+    .teacher-image {
+      width: 80%;
+      max-width: 400px;
+      margin: 1rem auto;
+      border-radius: 12px;
+      display: block;
+      object-fit: cover;
+      animation: fadeInImage 1s ease-out;
+    }
+
+    @keyframes fadeInImage {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+    }
+
+    nav {
+      background: #ffecb3;
+      padding: 1rem;
+      position: relative;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      color: #f57f17;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #000;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #f57f17;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #fff8dc;
+        padding: 1rem;
+        border-top: 1px solid #eee;
+      }
+
+      .nav-links a {
+        padding: 0.5rem 0;
+        font-size: 1rem;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+    }
+
+    section {
+      padding: 3rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #e65100;
+      position: relative;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      height: 4px;
+      width: 60px;
+      background: #f57c00;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    ul li {
+      margin: 0.5rem 0;
+      list-style: square;
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      will-change: transform;
+    }
+
+    .card:hover {
+      transform: translate3d(0, -5px, 0);
+    }
+
+    .quote {
+      font-style: italic;
+      margin-top: 1rem;
+      color: #444;
+      text-align: center;
+    }
+
+    .gallery {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .gallery img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 12px;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    footer {
+      background: #212121;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+    }
+
+    .swiper {
+      width: 100%;
+      max-width: 900px;
+      margin: 2rem auto;
+      position: relative;
+      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      aspect-ratio: 16 / 9;
+    }
+
+    .swiper-slide {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .swiper-slide img {
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: #f57c00;
+    }
+
+    .swiper-pagination-bullet-active {
+      background: #f57c00;
+    }
+
+    @media (max-width: 768px) {
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      body {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>S. S. M. Nityanand BalMandir</h1>
+    <p>Inspired by Excellence & Innovation</p>
+  </header>
+
+  <nav>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    <div class="nav-links" id="nav-links">
+      <a href="#about">About</a>
+      <a href="#why">Why Choose Us</a>
+      <a href="#better">Why We're Better</a>
+      <a href="#curriculum">Curriculum</a>
+      <a href="#vision">Vision</a>
+      <a href="#mission">Mission</a>
+      <a href="#director">Director's Message</a>
+    </div>
+  </nav>
+
+  <section id="about" class="card" data-aos="fade-up">
+    <h2>About Us</h2>
+    <p>We provide a joyful, safe, and creative learning space where children grow with love, curiosity, and confidence.</p>
+  </section>
+
+  <section id="why" class="card" data-aos="fade-left">
+    <h2>Why Choose Us?</h2>
+    <ul>
+      <li>Activity-Based Joyful Learning</li>
+      <li>Safe & Colourful Classrooms</li>
+      <li>Experienced & Caring Teachers</li>
+      <li>Affordable Quality Education</li>
+      <li>Strong Focus on Communication</li>
+      <li>No Homework Burden</li>
+      <li>Celebrations & Stage Exposure</li>
+    </ul>
+  </section>
+
+  <section id="better" class="card" data-aos="fade-right">
+    <h2>Why We’re Better</h2>
+    <ul>
+      <li>Rich Maharashtrian Cultural Focus</li>
+      <li>Annual Prizes & Recognition</li>
+      <li>Sports & Active Play</li>
+      <li>Individual Attention</li>
+    </ul>
+  </section>
+
+  <section id="curriculum" class="card" data-aos="zoom-in">
+    <h2>Curriculum Overview</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 2rem">
+      <div style="flex: 1; min-width: 250px">
+        <h3>Mini KG</h3>
+        <ul>
+          <li>Colours, Shapes, Animals</li>
+          <li>Rhymes, Songs & Scribbling</li>
+          <li>Good Habits & Play Time</li>
+        </ul>
+      </div>
+      <div style="flex: 1; min-width: 250px">
+        <h3>Junior KG</h3>
+        <ul>
+          <li>Writing Basics & Vocabulary</li>
+          <li>Storytelling & Music</li>
+          <li>Art & Theme Learning</li>
+        </ul>
+      </div>
+      <div style="flex: 1; min-width: 250px">
+        <h3>Senior KG</h3>
+        <ul>
+          <li>Reading, Writing & Speaking</li>
+          <li>Logical Thinking & Math</li>
+          <li>Group Learning & Rhymes</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="card" data-aos="fade-up">
+    <h2 style="font-size: 1.5rem;">Memories Through Images</h2>
+    <div class="swiper-container swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="./WhatsApp Image 2025-04-10 at 9.16.22 PM.jpeg" alt="Slide 0" /></div>
+        <div class="swiper-slide"><img src="./1.jpeg" alt="Slide 1" /></div>
+        <div class="swiper-slide"><img src="./2.jpeg" alt="Slide 2" /></div>
+        <div class="swiper-slide"><img src="./3.jpeg" alt="Slide 3" /></div>
+        <div class="swiper-slide"><img src="./4.jpeg" alt="Slide 4" /></div>
+        <div class="swiper-slide"><img src="./5.jpeg" alt="Slide 5" /></div>
+        <div class="swiper-slide"><img src="./6.jpeg" alt="Slide 6" /></div>
+        <div class="swiper-slide"><img src="./7.jpeg" alt="Slide 7" /></div>
+        <div class="swiper-slide"><img src="./8.jpeg" alt="Slide 8" /></div>
+        <div class="swiper-slide"><img src="./9.jpeg" alt="Slide 9" /></div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+
+  <section id="vision" class="card" data-aos="flip-left">
+    <h2>Our Vision</h2>
+    <p>To nurture happy, confident, and value-driven children through love, learning, and life experiences.</p>
+  </section>
+
+  <section id="mission" class="card" data-aos="flip-right">
+    <h2>Our Mission</h2>
+    <p>To provide joyful, creative, and culturally rich education—so every child learns with a smile.</p>
+  </section>
+
+  <section id="director" class="card" data-aos="fade-up">
+    <h2>Director’s Message</h2>
+    <p class="quote">“We strongly believe that early childhood is the most important stage in life. Our focus is to
+      offer love, safety, learning, and joyful memories during these golden years. We are proud to build a foundation
+      where every child feels special, confident, and excited to come to school every day.”</p>
+  </section>
+
+  <footer>
+    &copy; 2025 S. S. M. Nityanand BalMandir. All Rights Reserved.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper', {
+      loop: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true
+      },
+      speed: 800,
+    });
+
+    // Mobile Menu Toggle
+    document.getElementById("menu-toggle").addEventListener("click", function () {
+      document.getElementById("nav-links").classList.toggle("show");
+    });
+  </script>
+
+</body>
+
+</html>
